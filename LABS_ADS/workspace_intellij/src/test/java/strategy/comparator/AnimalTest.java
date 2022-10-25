@@ -1,5 +1,6 @@
 package strategy.comparator;
 
+/*
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -14,12 +15,14 @@ public class AnimalTest {
 
         List<Animal> listaDeAnimais = new ArrayList<>();
 
+
         Animal a1 = new Animal(1L, "Tartaruga");
         Animal a2 = new Animal(2L, "Coelho");
         Animal a3 = new Animal(3L, "Cachorro");
         Animal a4 = new Animal(4L, "Gato");
         Animal a5 = new Animal(5L, "Girafa");
         Animal a6 = new Animal(6L, "Gato");
+
 
         listaDeAnimais.add(a1);
         listaDeAnimais.add(a2);
@@ -63,3 +66,5 @@ public class AnimalTest {
         listaDeAnimais.forEach(System.out::println);
     }
 }
+
+*/
