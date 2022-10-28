@@ -2,11 +2,11 @@ package state.artigo;
 
 import java.time.LocalDate;
 
-public class EstadoRascunho implements Estado {
+public class EstadoRevisando implements Estado{
 
     private Artigo artigo;
 
-    public EstadoRascunho(Artigo artigo){
+    public EstadoRevisando(Artigo artigo) {
         this.artigo = artigo;
     }
 
@@ -24,8 +24,17 @@ public class EstadoRascunho implements Estado {
     }
 
     @Override
-    public void reprovar(){
+    public void reprovar() {
+        GerenteDeSegurança seguranca = GerenteDeSegurança.getInstance();
 
+        if(seguranca.ehUsuarioModerador()){
+            this.artigo.transitarEstadoPara(new EstadoRascunho(artigo));
+            this.artigo.getLogHistorico().add("Transitando para RASCUNHO em " + LocalDate.now());
+            return;
+        }else{
+            throw new RuntimeException("Usuario não tem permissão para reprovar");
+        }
     }
+
 
 }

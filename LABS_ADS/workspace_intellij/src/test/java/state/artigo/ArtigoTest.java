@@ -8,21 +8,19 @@ public class ArtigoTest {
 
     @Test
     public void deveArtigoTransitarDeRascunhoAteAprovado() {
-        GerenteDeSegurança segurança = GerenteDeSegurança.getInstance();
+        GerenteDeSegurança seguranca = GerenteDeSegurança.getInstance();
 
         Artigo artigo = new Artigo();
 
-        segurança.setUsuarioCorrente("AUTOR");
-        artigo.publicar();
+        seguranca.setUsuarioCorrente("AUTOR");
+        artigo.onPublicar();
 
-        assertEquals("REVISANDO", artigo.getEstado());
+        assertTrue(artigo.getEstado() instanceof EstadoRevisando);
 
-        segurança.setUsuarioCorrente("MODERADOR");
-        artigo.publicar();
+        seguranca.setUsuarioCorrente("MODERADOR");
+        artigo.onPublicar();
 
-        assertEquals("APROVADO", artigo.getEstado());
-
-        artigo.getLogHistorico().forEach(System.out::println);
+        assertTrue(artigo.getEstado() instanceof EstadoAprovado);
     }
 
 }
