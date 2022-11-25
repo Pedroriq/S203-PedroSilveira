@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ADS_Padrao_SOA/ADS_Padrao_SOA.iml" filepath="$PROJECT_DIR$/ADS_Padrao_SOA/ADS_Padrao_SOA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ADS_Padrao_SOAD.iml" filepath="$PROJECT_DIR$/.idea/ADS_Padrao_SOAD.iml" />
+    </modules>
+  </component>
+</project>
